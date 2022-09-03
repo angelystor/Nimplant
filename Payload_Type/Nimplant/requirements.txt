@@ -1,0 +1,5 @@
+dynaconf
+aio-pika
+pycrypto
+pycryptodome
+mythic-payloadtype-container
