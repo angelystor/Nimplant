@@ -7,7 +7,7 @@ import tempfile
 import zipfile
 
 class NimPlant(PayloadType):
-    name = "Nimplant"  # name that would show up in the UI
+    name = "nimplant"  # name that would show up in the UI
     file_extension = "zip"  # default file extension to use when creating payloads
     author = "@NotoriousRebel"  # author of the payload type
     supported_os = [  # supported OS and architecture combos
