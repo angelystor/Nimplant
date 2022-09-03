@@ -17,6 +17,7 @@ class NimPlant(PayloadType):
     wrapped_payloads = []
     note = "A fully featured cross-platform implant written in Nim"
     supports_dynamic_loading = False
+    build_parameters = []
     '''
     build_parameters = {
         "os": BuildParameter(name="os", parameter_type=BuildParameterType.ChooseOne, description="Choose the target OS",
@@ -44,6 +45,7 @@ class NimPlant(PayloadType):
     '''
     #  the names of the c2 profiles that your agent supports
     c2_profiles = ["HTTP"]
+    translation_container = None
 
     async def build(self) -> BuildResponse:
         # this function gets called to create an instance of your payload
