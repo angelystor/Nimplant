@@ -18,10 +18,11 @@ class NimPlant(PayloadType):
     note = "A fully featured cross-platform implant written in Nim"
     supports_dynamic_loading = False
     build_parameters = [
-        BuildParameter(name="os", 
-                       parameter_type=BuildParameterType.ChooseOne, 
-                       description="Choose the target OS", 
-                       choices=["windows", "linux"])
+        BuildParameter(
+            name="os", 
+            parameter_type=BuildParameterType.ChooseOne, 
+            description="Choose the target OS", 
+            choices=["windows", "linux"])
 
     ]
     '''
