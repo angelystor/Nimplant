@@ -9,7 +9,7 @@ import zipfile
 class NimPlant(PayloadType):
     name = "nimplant"  # name that would show up in the UI
     file_extension = "zip"  # default file extension to use when creating payloads
-    author = "@NotoriousRebel/@Angelystor"  # author of the payload type
+    author = "@NotoriousRebel, @Angelystor"  # author of the payload type
     supported_os = [  # supported OS and architecture combos
         SupportedOS.Windows, SupportedOS.Linux
     ]
@@ -17,7 +17,42 @@ class NimPlant(PayloadType):
     wrapped_payloads = []
     note = "A fully featured cross-platform implant written in Nim"
     supports_dynamic_loading = False
-    build_parameters = []
+    build_parameters = [
+        BuildParameter(name="os", 
+                       parameter_type=BuildParameterType.ChooseOne, 
+                       description="Choose the target OS", 
+                       choices=["windows", "linux"]),
+        BuildParameter(name="lang", 
+                       parameter_type=BuildParameterType.ChooseOne,
+                       description="Choose the language implant will be compiled in",
+                       choices=["C", "C++"]),
+        BuildParameter(name="build", 
+                       parameter_type=BuildParameterType.ChooseOne,
+                       description="Choose if implant is built in debug mode or release mode if in"
+                                   " debug mode source will be embedded in comments and payload is "
+                                   "built in debug mode",
+                       default_value="release",
+                       choices=["release", "debug"]),
+        BuildParameter(name="arch", 
+                       parameter_type=BuildParameterType.ChooseOne,
+                       choices=["x64", "x86"], 
+                       default_value="x64", 
+                       description="Target architecture"),
+        BuildParameter(name="format", 
+                       parameter_type=BuildParameterType.ChooseOne,
+                       description="Choose format for output",
+                       choices=["exe", "bin", "dll"]),
+        BuildParameter(name="chunk_size", 
+                       parameter_type=BuildParameterType.String, 
+                       default_value="512000",
+                       description="Provide a chunk size for large files",
+                       required=False),
+        BuildParameter(name="default_proxy", 
+                       parameter_type=BuildParameterType.String,
+                       default_value="false", 
+                       required=False,
+                       description="Use the default proxy on the system, either true or false"),
+    ]
     '''
     build_parameters = {
         "os": BuildParameter(name="os", parameter_type=BuildParameterType.ChooseOne, description="Choose the target OS",
