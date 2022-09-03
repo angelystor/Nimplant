@@ -1,5 +1,5 @@
-from CommandBase import *
-from MythicFileRPC import *
+from mythic_payloadtype_container.MythicCommandBase import *
+mythic_payloadtype_container.MythicRPC import *
 import json
 
 
