@@ -28,9 +28,7 @@ class NimPlant(PayloadType):
                        choices=["C", "C++"]),
         BuildParameter(name="build", 
                        parameter_type=BuildParameterType.ChooseOne,
-                       description="Choose if implant is built in debug mode or release mode if in"
-                                   " debug mode source will be embedded in comments and payload is "
-                                   "built in debug mode",
+                       description="Choose if implant is built in debug mode or release mode if in debug mode source will be embedded in comments and payload is built in debug mode",
                        default_value="release",
                        choices=["release", "debug"]),
         BuildParameter(name="arch", 
@@ -51,7 +49,7 @@ class NimPlant(PayloadType):
                        parameter_type=BuildParameterType.String,
                        default_value="false", 
                        required=False,
-                       description="Use the default proxy on the system, either true or false"),
+                       description="Use the default proxy on the system, either true or false")
     ]
     '''
     build_parameters = {
