@@ -23,6 +23,7 @@ class NimPlant(PayloadType):
             parameter_type=BuildParameterType.ChooseOne,
             description="Choose the target OS",
             choices=["windows", "linux"]),
+        '''
         BuildParameter(
             name="lang", 
             parameter_type=BuildParameterType.ChooseOne,
@@ -57,32 +58,9 @@ class NimPlant(PayloadType):
             default_value="false", 
             required=False,
             description="Use the default proxy on the system, either true or false")
+        '''
     ]
-    '''
-    build_parameters = {
-        "os": BuildParameter(name="os", parameter_type=BuildParameterType.ChooseOne, description="Choose the target OS",
-                             choices=["windows", "linux"]),
-        "lang": BuildParameter(name="lang", parameter_type=BuildParameterType.ChooseOne,
-                               description="Choose the language implant will be compiled in",
-                               choices=["C", "C++"]),
-        "build": BuildParameter(name="build", parameter_type=BuildParameterType.ChooseOne,
-                                description="Choose if implant is built in debug mode or release mode if in"
-                                            " debug mode source will be embedded in comments and payload is "
-                                            "built in debug mode",
-                                default_value="release",
-                                choices=["release", "debug"]),
-        "arch": BuildParameter(name="arch", parameter_type=BuildParameterType.ChooseOne,
-                               choices=["x64", "x86"], default_value="x64", description="Target architecture"),
-        "format": BuildParameter(name="format", parameter_type=BuildParameterType.ChooseOne,
-                                 description="Choose format for output",
-                                 choices=["exe", "bin", "dll"]),
-        "chunk_size": BuildParameter(name="chunk_size", parameter_type=BuildParameterType.String, default_value="512000",
-                                     description="Provide a chunk size for large files", required=False),
-        "default_proxy": BuildParameter(name="default_proxy", parameter_type=BuildParameterType.String,
-                                        default_value="false", required=False,
-                                        description="Use the default proxy on the system, either true or false"),
-    }
-    '''
+
     #  the names of the c2 profiles that your agent supports
     c2_profiles = ["HTTP"]
     translation_container = None
