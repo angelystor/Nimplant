@@ -22,6 +22,7 @@ class NimPlant(PayloadType):
                        parameter_type=BuildParameterType.ChooseOne, 
                        description="Choose the target OS", 
                        choices=["windows", "linux"]),
+        '''
         BuildParameter(name="lang", 
                        parameter_type=BuildParameterType.ChooseOne,
                        description="Choose the language implant will be compiled in",
@@ -50,6 +51,7 @@ class NimPlant(PayloadType):
                        default_value="false", 
                        required=False,
                        description="Use the default proxy on the system, either true or false")
+        '''
     ]
     '''
     build_parameters = {
