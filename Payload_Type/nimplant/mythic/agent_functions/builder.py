@@ -9,7 +9,7 @@ import zipfile
 class NimPlant(PayloadType):
     name = "nimplant"  # name that would show up in the UI
     file_extension = "zip"  # default file extension to use when creating payloads
-    author = "@NotoriousRebel"  # author of the payload type
+    author = "@NotoriousRebel/@Angelystor"  # author of the payload type
     supported_os = [  # supported OS and architecture combos
         SupportedOS.Windows, SupportedOS.Linux
     ]
@@ -17,6 +17,7 @@ class NimPlant(PayloadType):
     wrapped_payloads = []
     note = "A fully featured cross-platform implant written in Nim"
     supports_dynamic_loading = False
+    '''
     build_parameters = {
         "os": BuildParameter(name="os", parameter_type=BuildParameterType.ChooseOne, description="Choose the target OS",
                              choices=["windows", "linux"]),
@@ -40,6 +41,7 @@ class NimPlant(PayloadType):
                                         default_value="false", required=False,
                                         description="Use the default proxy on the system, either true or false"),
     }
+    '''
     #  the names of the c2 profiles that your agent supports
     c2_profiles = ["HTTP"]
 
