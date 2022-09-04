@@ -18,7 +18,6 @@ class NimPlant(PayloadType):
     note = "A fully featured cross-platform implant written in Nim"
     supports_dynamic_loading = False
     build_parameters = [
-        '''
         BuildParameter(
             name="os",
             parameter_type=BuildParameterType.ChooseOne,
@@ -58,7 +57,6 @@ class NimPlant(PayloadType):
             default_value="false", 
             required=False,
             description="Use the default proxy on the system, either true or false")
-        '''
     ]
 
     #  the names of the c2 profiles that your agent supports
