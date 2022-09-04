@@ -74,7 +74,7 @@ class NimPlant(PayloadType):
             file1 = open("{}/utils/config.nim".format(agent_build_path.name), 'r').read()
             file1 = file1.replace("%UUID%", self.uuid)
             file1 = file1.replace('%CHUNK_SIZE%', self.get_parameter('chunk_size'))
-            file1 = file1.replace('%DEFAULT_PROXY%', self.get_parameter('default_proxy'))
+            file1 = file1.replace('%DEFAULT_PROXY%', str(self.get_parameter('default_proxy')))
             profile = None
             is_https = False
             aespsk_val = ""
