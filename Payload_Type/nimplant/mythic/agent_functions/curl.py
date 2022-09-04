@@ -1,3 +1,4 @@
+from email.policy import default
 from mythic_payloadtype_container.MythicCommandBase import *
 import json
 
@@ -22,13 +23,13 @@ class CurlArguments(TaskArguments):
                 name="headers",
                 type=ParameterType.String,
                 description="base64 encoded json with headers.",
-                required=False,
+                default_value=None,
             ),
             CommandParameter(
                 name="body",
                 type=ParameterType.String,
                 description="base64 encoded body.",
-                required=False,
+                default_value=None,
             )
         ]
 
