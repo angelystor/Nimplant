@@ -5,32 +5,32 @@ import json
 class CurlArguments(TaskArguments):
     def __init__(self, command_line):
         super().__init__(command_line)
-        self.args = {
-            "url": CommandParameter(
+        self.args = [
+            CommandParameter(
                 name="url",
                 type=ParameterType.String,
                 description="URL to request.",
                 default_value="https://www.google.com",
             ),
-            "method": CommandParameter(
+            CommandParameter(
                 name="method",
                 type=ParameterType.ChooseOne,
                 description="Type of request",
                 choices=["GET", "POST"],
             ),
-            "headers": CommandParameter(
+            CommandParameter(
                 name="headers",
                 type=ParameterType.String,
                 description="base64 encoded json with headers.",
                 required=False,
             ),
-            "body": CommandParameter(
+            CommandParameter(
                 name="body",
                 type=ParameterType.String,
                 description="base64 encoded body.",
                 required=False,
-            ),
-        }
+            )
+        ]
 
     async def parse_arguments(self):
         self.load_args_from_json_string(self.command_line)

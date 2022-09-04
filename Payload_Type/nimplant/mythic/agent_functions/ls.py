@@ -5,10 +5,10 @@ import json
 class LsArguments(TaskArguments):
     def __init__(self, command_line):
         super().__init__(command_line)
-        self.args = {
-            "path": CommandParameter(name="path", type=ParameterType.String, default_value="."),
-            "recurse": CommandParameter(name="recurse", type=ParameterType.String, default_value="false")
-        }
+        self.args = [
+            CommandParameter(name="path", type=ParameterType.String, default_value="."),
+            CommandParameter(name="recurse", type=ParameterType.String, default_value="false")
+        ]
 
     async def parse_arguments(self):
         if len(self.command_line) > 0:

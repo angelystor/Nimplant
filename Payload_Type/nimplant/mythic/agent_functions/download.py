@@ -5,13 +5,13 @@ import json
 class DownloadArguments(TaskArguments):
     def __init__(self, command_line):
         super().__init__(command_line)
-        self.args = {
-            "file_path": CommandParameter(
+        self.args = [
+            CommandParameter(
                 name="file_path",
                 type=ParameterType.String,
                 description="Path to remote file to be downloaded",
             )
-        }
+        ]
 
     async def parse_arguments(self):
         if len(self.command_line) > 0:

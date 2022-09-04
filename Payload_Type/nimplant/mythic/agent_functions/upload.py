@@ -6,16 +6,16 @@ import json
 class UploadArguments(TaskArguments):
     def __init__(self, command_line):
         super().__init__(command_line)
-        self.args = {
-            "file": CommandParameter(
+        self.args = [
+            CommandParameter(
                 name="file", type=ParameterType.File, description="file to upload"
             ),
-            "remote_path": CommandParameter(
+            CommandParameter(
                 name="remote_path",
                 type=ParameterType.String,
                 description="/remote/path/on/victim.txt",
-            ),
-        }
+            )
+        ]
 
     async def parse_arguments(self):
         if len(self.command_line) > 0:
