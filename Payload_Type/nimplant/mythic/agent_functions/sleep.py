@@ -9,14 +9,12 @@ class SleepArguments(TaskArguments):
             CommandParameter(
                 name="jitter",
                 type=ParameterType.Number,
-                default_value=25,
                 description="Jitter percentage.",
                 default_value=-1,
             ),
             CommandParameter(
                 name="interval",
                 type=ParameterType.Number,
-                default_value=60,
                 description="Sleep time in seconds",
                 default_value=-1,
             )
