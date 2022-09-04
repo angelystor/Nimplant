@@ -33,22 +33,22 @@ proc createConfig*() : Config =
     # --d:psk=42
     const AESPSK {.strdefine.}: string = ""
     var temp = Config(
-    CallBackHosts: @["callback_host:callback_port"],
-    PayloadUUID: "%UUID%",
-    UserAgent: "USER_AGENT",
-    HostHeader: "domain_front",
-    Param: "query_path_name",
-    ChunkSize: parseInt("%CHUNK_SIZE%"),
-    DefaultProxy: parseBool("%DEFAULT_PROXY%"),
-    ProxyAddress: "proxy_host:proxy_port",
-    ProxyUser: "proxy_user",
-    ProxyPassword: "proxy_pass",
-    Sleep: parseInt("callback_interval"),
-    Jitter: parseInt("callback_jitter"),
-    KillDate: "killdate",
-    GetUrl:  "/get_uri",
-    PostUrl:  "/post_uri",
-    Psk: AESPSK)
+      CallBackHosts: @["callback_host:callback_port"],
+      PayloadUUID: "%UUID%",
+      UserAgent: "USER_AGENT",
+      HostHeader: "domain_front",
+      Param: "query_path_name",
+      ChunkSize: parseInt("%CHUNK_SIZE%"),
+      DefaultProxy: parseBool("%DEFAULT_PROXY%"),
+      ProxyAddress: "proxy_host:proxy_port",
+      ProxyUser: "proxy_user",
+      ProxyPassword: "proxy_pass",
+      Sleep: parseInt("callback_interval"),
+      Jitter: parseInt("callback_jitter"),
+      KillDate: "killdate",
+      GetUrl:  "/get_uri",
+      PostUrl:  "/post_uri",
+      Psk: AESPSK)
 
     for host in temp.CallBackHosts:
       temp.Servers.add(Server(Domain: host, Count: 0))
