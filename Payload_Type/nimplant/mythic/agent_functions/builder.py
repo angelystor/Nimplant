@@ -60,7 +60,7 @@ class NimPlant(PayloadType):
     ]
 
     #  the names of the c2 profiles that your agent supports
-    c2_profiles = ["HTTP"]
+    c2_profiles = ["http"]
     translation_container = None
 
     async def build(self) -> BuildResponse:

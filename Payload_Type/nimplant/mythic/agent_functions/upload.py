@@ -41,7 +41,7 @@ class UploadCommand(CommandBase):
     is_download_file = False
     is_remove_file = False
     is_upload_file = True
-    author = "@NotoriousRebel"
+    author = "@NotoriousRebel, @Angelystor"
     attackmapping = ["T1132", "T1030", "T1105"]
     argument_class = UploadArguments
 

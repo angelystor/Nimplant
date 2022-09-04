@@ -23,7 +23,7 @@ class SetEnvCommand(CommandBase):
     is_download_file = False
     is_remove_file = False
     is_upload_file = False
-    author = "@NotoriousRebel"
+    author = "@NotoriousRebel, @Angelystor"
     argument_class = SetEnvArguments
     attackmapping = []
 

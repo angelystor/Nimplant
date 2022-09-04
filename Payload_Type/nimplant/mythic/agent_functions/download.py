@@ -35,7 +35,7 @@ class DownloadCommand(CommandBase):
     is_download_file = True
     is_remove_file = False
     is_upload_file = False
-    author = "@NotoriousRebel"
+    author = "@NotoriousRebel, @Angelystor"
     argument_class = DownloadArguments
     attackmapping = []
 
